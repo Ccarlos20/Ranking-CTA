@@ -44,4 +44,5 @@ const gremios = [
 ```
 
 > El primer gremio en la lista se mostrará con una corona junto a su nombre.
-> Utilicen esta página: [click aquí](http://gzidlerpg.appspot.com/web/scores?tid=233060001)
+
+> Utilicen esta página para la clasificación: [click aquí](http://gzidlerpg.appspot.com/web/scores?tid=233060001)
