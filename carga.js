@@ -1,16 +1,16 @@
 const gremios = [
-  [309, 748, "[ARA] Malditos"],
-  [17, 1207, "[CUH] Cruzada Pituda"],
-  [51, 1053, "[JSK] ★JabbaSckoll★"],
-  [183, 862, "[SSL] Los Shelby S.L"],
-  [195, 847, "[3DS] Academia Draconica"],
-  [23, 1156, "[PBM] Para Bellum"]
+  [16, "[CUH] Cruzada Pituda", 1209],
+  [26, "[PBM] Para Bellum", 1141],
+  [42, "[JSK] ★JabbaSckoll★", 1072],
+  [170, "[SSL] Los Shelby S.L", 875],
+  [215, "[3DS] Academia Draconica", 839],
+  [350, "[ARA] Malditos", 693]
 ];
 
 const tbody = document.querySelector("#tabla-clasificacion tbody");
 const menorRank = Math.min(...gremios.map(g => g[0]));
 
-gremios.forEach(([rank, score, name]) => {
+gremios.forEach(([rank, name, score]) => {
   const fila = document.createElement("tr");
 
   const celdaRank = document.createElement("td");

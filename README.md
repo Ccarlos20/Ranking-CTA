@@ -37,10 +37,11 @@ La estructura de cada entrada debe seguir este orden:
 
 ```js
 const gremios = [
-  [Rank, Puntaje, "TAG + Nombre del Gremio"],
-  [1, 1200, "[ABC] Ejemplo Gremio"],
+  [Rank, "TAG + Nombre del Gremio", Puntaje],
+  [1, "[ABC] Ejemplo Gremio", 1200],
   ...
 ];
 ```
 
 > El primer gremio en la lista se mostrará con una corona junto a su nombre.
+> Utilicen esta página: (click aquí)[http://gzidlerpg.appspot.com/web/scores?tid=233060001]
