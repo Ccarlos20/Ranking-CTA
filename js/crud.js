@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // Elementos del DOM
   const btnTabla = document.getElementById("btnTabla");
   const panelCRUD = document.getElementById("panelCRUD");
   const panelAgregar = document.getElementById("panelAgregar");
@@ -36,8 +37,9 @@ document.addEventListener("DOMContentLoaded", () => {
   // Renderizar la tabla CRUD
   function renderCRUD() {
     tbodyCRUD.innerHTML = "";
-    gremios.forEach((gremio, i) => {
+    gremios.forEach((gremio, index) => {
       const fila = document.createElement("tr");
+      fila.dataset.index = index;
 
       fila.innerHTML = `
         <td><input type="number" value="${gremio[0]}" disabled></td>
@@ -55,13 +57,15 @@ document.addEventListener("DOMContentLoaded", () => {
       // Editar -> Guardar
       btnEditar.addEventListener("click", () => {
         const inputs = fila.querySelectorAll("input");
+        const idx = parseInt(fila.dataset.index);
 
         if (btnEditar.textContent.includes("Editar")) {
           inputs.forEach(input => input.disabled = false);
           btnEditar.textContent = "Guardar";
           btnEditar.classList.add("guardar");
         } else {
-          gremios[i] = [
+          // Guardar cambios
+          gremios[idx] = [
             parseInt(inputs[0].value) || 0,
             inputs[1].value.trim(),
             parseInt(inputs[2].value) || 0
@@ -71,15 +75,20 @@ document.addEventListener("DOMContentLoaded", () => {
           inputs.forEach(input => input.disabled = true);
           btnEditar.textContent = "Editar";
           btnEditar.classList.remove("guardar");
-          renderCRUD();
+
+          renderCRUD();            // Actualiza panel CRUD
+          renderTablaPrincipal();  // Actualiza tabla principal
         }
       });
 
       // Eliminar
       btnEliminar.addEventListener("click", () => {
-        gremios.splice(i, 1);
+        const idx = parseInt(fila.dataset.index);
+        gremios.splice(idx, 1);
         localStorage.setItem("gremios", JSON.stringify(gremios));
-        renderCRUD();
+
+        renderCRUD();            // Actualiza panel CRUD
+        renderTablaPrincipal();  // Actualiza tabla principal
       });
 
       tbodyCRUD.appendChild(fila);
@@ -106,7 +115,8 @@ document.addEventListener("DOMContentLoaded", () => {
     nuevoPuntaje.value = "";
 
     panelAgregar.style.display = "none";
-    renderCRUD();
+    renderCRUD();            // Actualiza panel CRUD
+    renderTablaPrincipal();  // Actualiza tabla principal
   });
 
   // Cancelar nuevo
@@ -116,4 +126,7 @@ document.addEventListener("DOMContentLoaded", () => {
     nuevoPuntaje.value = "";
     panelAgregar.style.display = "none";
   });
+
+  // Renderizar tabla principal al inicio
+  renderTablaPrincipal();
 });
