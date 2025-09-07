@@ -1,0 +1,88 @@
+/* Panel flotante */
+.panel-crud {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.panel-contenido {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: auto;
+  max-width: 90%;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+/* Botones */
+.btn {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 5px;
+  margin: 3px;
+  cursor: pointer;
+  font-weight: bold;
+  background: #3498db;
+  color: white;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #217dbb;
+}
+
+.btn.cancelar {
+  background: #e74c3c;
+}
+
+.btn.cancelar:hover {
+  background: #c0392b;
+}
+
+/* Tabla */
+#tablaCRUD input {
+  width: 100%;
+  padding: 4px;
+  box-sizing: border-box;
+}
+
+/* Inputs generales */
+input[type="text"],
+input[type="number"] {
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  font-size: 14px;
+  transition: all 0.3s;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Al enfocar el input */
+input[type="text"]:focus,
+input[type="number"]:focus {
+  border-color: #3498db;
+  box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+}
+
+/* Inputs en el panel CRUD */
+#tablaCRUD input {
+  background: #f9f9f9;
+}
+
+/* Inputs del panel de agregar */
+#panelAgregar input {
+  background: #fff;
+}
+
+/* Alinear en tabla del panel de agregar */
+#panelAgregar table td {
+  padding: 5px;
+}

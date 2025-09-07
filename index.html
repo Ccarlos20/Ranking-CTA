@@ -2,15 +2,67 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Tabla de Clasificación</title>
-  <link rel="stylesheet" href="estilo.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/tabla.css">
+  <link rel="stylesheet" href="css/imagenes.css">
+  <link rel="stylesheet" href="css/botones.css">
+  <link rel="stylesheet" href="css/crud.css">
+  <link rel="stylesheet" href="css/footer.css">
   <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
 </head>
 <body>
 
+  <!-- Botones en la parte superior derecha -->
+  <div class="botones-superior">
+    <button id="btnCaptura">Capturar</button>
+    <button id="btnTabla">Gestionar Tabla</button>
+  </div>
+
+  <!-- Panel CRUD principal -->
+  <div id="panelCRUD" class="panel-crud">
+    <div class="panel-contenido">
+      <h2>Gestionar Gremios</h2>
+      <table id="tablaCRUD">
+        <thead>
+          <tr>
+            <th>Rank</th>
+            <th>Nombre</th>
+            <th>Puntaje</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <div class="acciones-crud">
+        <button id="agregarFila" class="btn">Agregar</button>
+        <button id="cerrarPanel" class="btn cancelar">Cerrar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Panel para agregar -->
+  <div id="panelAgregar" class="panel-crud">
+    <div class="panel-contenido">
+      <h2>Agregar Gremio</h2>
+      <table>
+        <tr>
+          <td><input type="number" id="nuevoRank" placeholder="Rank"></td>
+          <td><input type="text" id="nuevoNombre" placeholder="Nombre"></td>
+          <td><input type="number" id="nuevoPuntaje" placeholder="Puntaje"></td>
+          <td>
+            <button id="guardarNuevo" class="btn">Guardar</button>
+            <button id="cancelarNuevo" class="btn cancelar">Cancelar</button>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
   <div class="contenedor">
     <!-- Imagen superior -->
-    <img src="imagen1.png" alt="Imagen superior" class="imagen-superior">
+    <img src="img/imagen1.png" alt="Imagen superior" class="imagen-superior">
 
     <!-- Tabla de clasificación -->
     <table id="tabla-clasificacion">
@@ -28,11 +80,18 @@
   </div>
 
   <!-- Imagen inferior más pequeña -->
-  <img src="imagen2.jpg" alt="Imagen inferior" class="imagen-inferior">
+  <img src="img/imagen2.jpg" alt="Imagen inferior" class="imagen-inferior">
 
-  <script src="orden.js"></script>
-  <script src="carga.js"></script>
-  <script src="captura.js"></script>
+  <script src="js/orden.js"></script>
+  <script src="js/carga.js"></script>
+  <script src="js/captura.js"></script>
+  <script src="js/crud.js"></script>
 
+  <!-- Footer -->
+  <footer>
+    <p>
+      <a href="https://github.com/Ccarlos20/Ranking-CTA" target="_blank">Repositorio en GitHub</a>
+    </p>
+  </footer>
 </body>
 </html>

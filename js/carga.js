@@ -1,10 +1,10 @@
-const gremios = [
-  [16, "[CUH] Cruzada Pituda", 1209],
-  [26, "[PBM] Para Bellum", 1141],
-  [42, "[JSK] ★JabbaSckoll★", 1072],
-  [170, "[SSL] Los Shelby S.L", 875],
-  [215, "[3DS] Academia Draconica", 839],
-  [350, "[ARA] Malditos", 693]
+const gremios = JSON.parse(localStorage.getItem("gremios")) || [
+  [17, "[CUH] Cruzada Pituda", 1198],
+  [26, "[PBM] Para Bellum", 1159],
+  [36, "[JSK] ★JabbaSckoll★", 1087],
+  [157, "[SSL] Los Shelby S.L", 893],
+  [222, "[3DS] Academia Draconica", 824],
+  [370, "[ARA] Malditos", 678]
 ];
 
 const tbody = document.querySelector("#tabla-clasificacion tbody");

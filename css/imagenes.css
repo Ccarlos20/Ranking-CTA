@@ -1,0 +1,10 @@
+.imagen-superior {
+  width: 100%;
+  height: auto;
+}
+
+.imagen-inferior {
+  max-width: 15%;
+  height: auto;
+  margin: 20px 0;
+}

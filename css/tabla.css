@@ -1,14 +1,3 @@
-body {
-  font-family: Arial, sans-serif;
-  padding: 20px;
-  text-align: center;
-}
-
-.contenedor {
-  max-width: 40%;
-  margin: 0 auto;
-}
-
 table {
   border-collapse: collapse;
   width: 100%;
@@ -29,18 +18,6 @@ th {
 /* Alternancia de filas */
 tr:nth-child(even) {
   background-color: #f2f2f2;
-}
-
-/* Imagenes */
-.imagen-superior {
-  width: 100%;
-  height: auto;
-}
-
-.imagen-inferior {
-  max-width: 15%;
-  height: auto;
-  margin: 20px 0;
 }
 
 /* Flechas reservadas (orden.js) */

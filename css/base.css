@@ -1,0 +1,10 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  text-align: center;
+}
+
+.contenedor {
+  max-width: 40%;
+  margin: 0 auto;
+}
