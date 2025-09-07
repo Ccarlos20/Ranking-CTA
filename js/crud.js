@@ -71,6 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
           inputs.forEach(input => input.disabled = true);
           btnEditar.textContent = "Editar";
           btnEditar.classList.remove("guardar");
+          renderCRUD();
         }
       });
 
